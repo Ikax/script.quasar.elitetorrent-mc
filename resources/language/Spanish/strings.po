@@ -1,0 +1,139 @@
+# Kodi Media Center language file
+# Addon Name: RSS Torrents Integration, trakt
+# Addon id: plugin.video.rsstorrentintegration
+# Addon Provider: mancuniancol
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-05 05:53-0400\n"
+"PO-Revision-Date: 2015-10-22 06:43-0400\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: settings.xml:3
+msgctxt "#32050"
+msgid "General"
+msgstr "General"
+
+#: IMDB main.py:6
+msgctxt "#32151"
+msgid "Language:"
+msgstr "Idioma:"
+
+#: settings.xml:11
+msgctxt "#32057"
+msgid "Notification Message"
+msgstr "Mensaje de Notificación"
+
+#: settings.xml:12
+msgctxt "#32058"
+msgid "Time (seconds):"
+msgstr "Tiempo (segundos):"
+
+#: settings.xml:20
+msgctxt "#32062"
+msgid "Movies Filters"
+msgstr "Filtro para Películas"
+
+#: settings.xml:21 settings.xml:43
+msgctxt "#32063"
+msgid "Advance Setup (for 'AND' use space, for 'OR' use comma)"
+msgstr "Configuración Avanzada (para 'Y' use un espacio, para 'O' use una coma)"
+
+#: settings.xml:22 settings.xml:44
+msgctxt "#32064"
+msgid "Accept File with:"
+msgstr "Aceptar Archivos con:"
+
+#: settings.xml:23 settings.xml:45
+msgctxt "#32065"
+msgid "Block File with:"
+msgstr "Rechazar Archivos con:"
+
+#: settings.xml:24 settings.xml:46
+msgctxt "#32066"
+msgid "Easy Setup Keywords after the query"
+msgstr "Configuración Simple por medio de palabras Clave"
+
+#: settings.xml:42
+msgctxt "#32070"
+msgid "TV Filters"
+msgstr "Filtros para Series"
+
+#: setting.xml
+msgctxt "#32090"
+msgid "Login"
+msgstr "Iniciar Sesion"
+
+#: setting.xml
+msgctxt "#32091"
+msgid "Username:"
+msgstr "Usuario:"
+
+#: setting.xml
+msgctxt "#32092"
+msgid "Password:"
+msgstr "Clave:"
+
+#: setting.xml
+msgctxt "#32093"
+msgid "URL address (ex:http://www.example.com):"
+msgstr "Dirección URL (ex: http://www.example.com):"
+
+#: settings.xml:13
+msgctxt "#32199"
+msgid "Language for the Search"
+msgstr "Idioma para la Busqueda"
+
+#: settings.xml:13
+msgctxt "#32200"
+msgid "Extra Keywords to send in the URL"
+msgstr "Palabras clave adicionales para enviar en el URL"
+
+#: settings.xml:13
+msgctxt "#32201"
+msgid "Extra Keywords:"
+msgstr "Palabras clave adicionales:"
+
+#: settings.xml:13
+msgctxt "#32205"
+msgid "Download Settings"
+msgstr "Configuración de Descarga"
+
+#: settings.xml:13
+msgctxt "#32206"
+msgid "Maximum Torrents to Send to Quasar:"
+msgstr "Máximo Torrentes para enviar a Quasar:"
+
+#: settings.xml:11
+msgctxt "#32207"
+msgid "Limitation Size Files"
+msgstr "Limitación al Tamaño de Archivos"
+
+#: settings.xml:11
+msgctxt "#32208"
+msgid "Limitation Size Movie Files"
+msgstr "Limitación al Tamaño de Archivos de Películas"
+
+#: settings.xml:11
+msgctxt "#32209"
+msgid "Limitation Size TV Files"
+msgstr "Limitación al Tamaño de Archivos de Series"
+
+#: settings.xml:12
+msgctxt "#32210"
+msgid "Minimum Size in GB (0 = Filter OFF):"
+msgstr "Tamaño Minimo en GB (0 = No Filtro)"
+
+#: settings.xml:13
+msgctxt "#32211"
+msgid "Maximum Size in GB (10 = Filter OFF):"
+msgstr "Tamaño Máximo en GB (10 = No Filtro)"
