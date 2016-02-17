@@ -418,7 +418,7 @@ def exception(title):
 def getlinks(page):
     browser = Browser()
     result = ""
-    if browser.open(page):
+    if browser.open(page.encode("UTF-8")):
         content = re.findall('magnet:\?[^\'"\s<>\[\]]+', browser.content)
         if content is not None:
             result = content[0]
