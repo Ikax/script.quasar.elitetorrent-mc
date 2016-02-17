@@ -1,2 +1,3 @@
+v1.2.1 new Icon
 v1.2.0 icon support
 Version 1.1.0 Quasar ready
