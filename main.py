@@ -13,16 +13,16 @@ browser = common.Browser()
 filters = common.Filtering()
 
 
-# using function from Steeve to add Provider's name and search torrent
 def extract_torrents(data):
-    try:
-        filters.information()  # print filters settings
+    filters.information()  # print filters settings
+    sint = common.ignore_exception(ValueError)(int)
+    results = []
+    cont = 0
+    if data is not None:
         soup = BeautifulSoup(data, 'html5lib')
         links = soup.find("table", class_="fichas-listado")
         if links is not None:
             links = links.tbody.findAll('tr')
-            cont = 0
-            results = []
             for link in links:
                 columns = link.findAll('td')
                 if len(columns) == 5:
@@ -34,33 +34,29 @@ def extract_torrents(data):
                     magnet = ""
                     for item in a:
                         magnet = settings.value["url_address"] + item['href']
+                    size = None
                     seeds = columns[2].text  # seeds
                     peers = columns[3].text  # peers
-                    size = None
-                    seeds = int(filter(str.isdigit, '0' + common.Filtering.normalize(seeds)))
-                    peers = int(filter(str.isdigit, '0' + common.Filtering.normalize(peers)))
+                    # info_magnet = common.Magnet(magnet)
                     if filters.verify(name, size):
-                        cont += 1
                         # magnet = common.getlinks(magnet)
+                        cont += 1
                         results.append({"name": name.strip(),
                                         "uri": magnet,
                                         # "info_hash": info_magnet.hash,
                                         # "size": size.strip(),
-                                        "seeds": int(seeds),
-                                        "peers": int(peers),
+                                        "seeds": sint(seeds),
+                                        "peers": sint(peers),
                                         "language": settings.value.get("language", "es"),
-                                        "provider": settings.name
+                                        "provider": settings.name,
+                                        "icon": settings.icon,
                                         })  # return the torrent
                         if cont >= int(settings.value.get("max_magnets", 10)):  # limit magnets
                             break
                     else:
                         provider.log.warning(filters.reason)
-            provider.log.info('>>>>>>' + str(cont) + ' torrents sent to Quasar<<<<<<<')
-            return results
-    except:
-        provider.log.error('>>>>>>>ERROR parsing data<<<<<<<')
-        provider.notify(message='ERROR parsing data', header=None, time=5000, image=settings.icon)
-        return []
+    provider.log.info('>>>>>>' + str(cont) + ' torrents sent to Quasar<<<<<<<')
+    return results
 
 
 def search(query):
@@ -74,13 +70,8 @@ def search_general(info):
     query = filters.type_filtering(info, '+')  # check type filter and set-up filters.title
     url_search = "%s/busqueda/%s/modo:listado" % (settings.value["url_address"], query)
     provider.log.info(url_search)
-    if browser.open(url_search):
-        results = extract_torrents(browser.content)
-    else:
-        provider.log.error('>>>>>>>%s<<<<<<<' % browser.status)
-        provider.notify(message=browser.status, header=None, time=5000, image=settings.icon)
-        results = []
-    return results
+    browser.open(url_search)
+    return extract_torrents(browser.content)
 
 
 def search_movie(info):
@@ -93,7 +84,7 @@ def search_movie(info):
         else:
             query = common.IMDB_title(info['imdb_id'])  # Title + year
     else:  # Title en foreign language
-        query = common.translator(info['imdb_id'], settings.value["language"])  # Just title
+        query = common.translator(info['imdb_id'], settings.value["language"], extra=False)  # Just title
     info["query"] = query
     return search_general(info)
 

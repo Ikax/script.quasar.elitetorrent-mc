@@ -35,6 +35,8 @@ class Settings:
             key = setting.attrs.get("id")
             if key is not None:
                 self.value[key] = self.settings.getSetting(key)
+        if 'url_address' in self.value and self.value['url_address'].endswith('/'):
+            self.value['url_address'] = self.value['url_address'][:-1]
 
 
 class Browser:
@@ -353,24 +355,26 @@ def translator(imdb_id, language, extra=True):
         movie = json.loads(browser1.content)
         title = movie['movie_results'][0]['title'].encode('utf-8')
         original_title = movie['movie_results'][0]['original_title'].encode('utf-8')
-        # if title == original_title and extra:
-        #     title += ' ' + keywords[language]
+        if title == original_title and extra:
+            title += ' ' + keywords[language]
     else:
         title = 'Pas de communication avec le themoviedb.org'
     return title.rstrip()
 
 
 def size_int(size_txt):
+    sint = ignore_exception(ValueError)(int)
+    sfloat = ignore_exception(ValueError)(float)
     size_txt = size_txt.upper()
     size1 = size_txt.replace('B', '').replace('I', '').replace('K', '').replace('M', '').replace('G', '')
-    size = float(size1)
+    size = sfloat(size1)
     if 'K' in size_txt:
         size *= 1000
     if 'M' in size_txt:
         size *= 1000000
     if 'G' in size_txt:
         size *= 1e9
-    return int(size)
+    return sint(size)
 
 
 class Magnet:
@@ -421,3 +425,22 @@ def getlinks(page):
             if content is not None:
                 result = 'http' + content[0] + '.torrent'
     return result
+
+
+##http://stackoverflow.com/questions/2262333/is-there-a-built-in-or-more-pythonic-way-to-try-to-parse-a-string-to-an-integer
+def ignore_exception(IgnoreException=Exception, DefaultVal=0):
+    """ Decorator for ignoring exception from a function
+    e.g.   @ignore_exception(DivideByZero)
+    e.g.2. ignore_exception(DivideByZero)(Divide)(2/0)
+    """
+
+    def dec(function):
+        def _dec(*args, **kwargs):
+            try:
+                return function(*args, **kwargs)
+            except IgnoreException:
+                return DefaultVal
+
+        return _dec
+
+    return dec
