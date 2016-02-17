@@ -53,10 +53,12 @@ class Browser:
 
         self._cookies = urllib.urlencode(payload)
 
-    def open(self, url='', language='en'):
+    def open(self, url='', language='en', payload={}):
         import urllib2
 
         result = True
+        if len(payload) > 0:
+            self.create_cookies(payload)
         if self._cookies is not None:
             req = urllib2.Request(url, self._cookies)
             self._cookies = None
