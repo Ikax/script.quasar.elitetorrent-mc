@@ -11,6 +11,16 @@ import xbmcgui
 
 from bs4 import BeautifulSoup
 
+season_names = {'en': 'season',
+                'es': 'temporada',
+                'fr': 'saison',
+                'nl': 'seizoen',
+                'ru': 'сезон',
+                'it': 'stagione',
+                'de': 'saison',
+                'pt': 'temporada',
+                }
+
 
 class Settings:
     def __init__(self):
@@ -269,8 +279,6 @@ class Filtering:
                         res2.append(False)
                 res1.append(all(res2))
             res = any(res1)
-            if self.info['type'] == 'show' and value == 'season':
-                res = True
         return res
 
     # validate size

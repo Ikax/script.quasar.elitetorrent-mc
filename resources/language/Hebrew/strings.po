@@ -1,0 +1,139 @@
+# Kodi Media Center language file
+# Addon Name: provider
+# Addon id: script.quasar.provider, provider
+# Addon Provider: mancuniancol
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Quasar MC's Priovider\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-05 05:53-0400\n"
+"PO-Revision-Date: 2016-02-21 17:12+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: ShlomiD\n"
+"X-Generator: Poedit 1.8.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language: he\n"
+
+#: settings.xml:3
+msgctxt "#32050"
+msgid "General"
+msgstr "כללי"
+
+#: IMDB main.py:6
+msgctxt "#32151"
+msgid "Language:"
+msgstr "שפה:"
+
+#: settings.xml:11
+msgctxt "#32057"
+msgid "Notification Message"
+msgstr "הודעת התראה"
+
+#: settings.xml:12
+msgctxt "#32058"
+msgid "Time (miliseconds):"
+msgstr "זמן (מילישניות):"
+
+#: settings.xml:20
+msgctxt "#32062"
+msgid "Movies Filters"
+msgstr "מסנני סרטים"
+
+#: settings.xml:21 settings.xml:43
+msgctxt "#32063"
+msgid "Advance Setup (for 'AND' use space, for 'OR' use comma)"
+msgstr "הגדרות מקדימות (עבור \"גם\" השתמש ברווח, עבור \"או\" השתמש ב\",\")"
+
+#: settings.xml:22 settings.xml:44
+msgctxt "#32064"
+msgid "Accept File with:"
+msgstr "קבל קובץ עם:"
+
+#: settings.xml:23 settings.xml:45
+msgctxt "#32065"
+msgid "Block File with:"
+msgstr "חסום קובץ עם:"
+
+#: settings.xml:24 settings.xml:46
+msgctxt "#32066"
+msgid "Easy Setup Keywords after the query"
+msgstr "מילות מפתח להגדרה קלה לאחר השאילתה"
+
+#: settings.xml:42
+msgctxt "#32070"
+msgid "TV Filters"
+msgstr "מסנני סדרות"
+
+#: setting.xml
+msgctxt "#32090"
+msgid "Login"
+msgstr "התחברות"
+
+#: setting.xml
+msgctxt "#32091"
+msgid "Username:"
+msgstr "שם משתמש:"
+
+#: setting.xml
+msgctxt "#32092"
+msgid "Password:"
+msgstr "סיסמה:"
+
+#: setting.xml
+msgctxt "#32093"
+msgid "URL address (ex:http://www.example.com):"
+msgstr "כתובת אינטרנט (דוגמה:http://www.example.com):"
+
+#: settings.xml:13
+msgctxt "#32199"
+msgid "Language for the Search"
+msgstr "שפה לחיפוש"
+
+#: settings.xml:13
+msgctxt "#32200"
+msgid "Extra Keywords to send in the URL"
+msgstr "מילות מפתח נוספות לשליחה בכתובת האינטרנט"
+
+#: settings.xml:13
+msgctxt "#32201"
+msgid "Extra Keywords:"
+msgstr "מילות מפתח נוספות:"
+
+#: settings.xml:13
+msgctxt "#32205"
+msgid "Download Settings"
+msgstr "הגדרות הורדה"
+
+#: settings.xml:13
+msgctxt "#32206"
+msgid "Maximum Torrents to Send to Quasar:"
+msgstr "כמות טורנטים מרבית לשלוח אל Quasar:"
+
+#: settings.xml:11
+msgctxt "#32207"
+msgid "Limitation Size Files"
+msgstr "הגבלות גודל קובץ"
+
+#: settings.xml:11
+msgctxt "#32208"
+msgid "Limitation Size Movie Files"
+msgstr "הגבלות גודל קובץ (סרטים)"
+
+#: settings.xml:11
+msgctxt "#32209"
+msgid "Limitation Size TV Files"
+msgstr "הגבלות גודל קובץ (סדרות)"
+
+#: settings.xml:12
+msgctxt "#32210"
+msgid "Minimum Size in GB (0 = Filter OFF):"
+msgstr "גודל קובץ מינימלי (0=סינון כבוי) (ב-GB):"
+
+#: settings.xml:13
+msgctxt "#32211"
+msgid "Maximum Size in GB (10 = Filter OFF):"
+msgstr "גודל קובץ מקסימלי (10=סינון כבוי) (ב-GB):"
