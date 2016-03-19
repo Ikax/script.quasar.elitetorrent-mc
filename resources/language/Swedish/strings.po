@@ -137,3 +137,8 @@ msgstr "Minsta Storlek i GB (0 = Inaktivera filter):"
 msgctxt "#32211"
 msgid "Maximum Size in GB (10 = Filter OFF):"
 msgstr "Maximal storlek i GB (0 = Inaktivera filter):"
+
+#: settings.xml:13
+msgctxt "#32212"
+msgid "Search seasons, instead of episodes:"
+msgstr "Sök säsonger, i stället för episoder:"

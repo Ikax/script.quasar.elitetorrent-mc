@@ -137,3 +137,8 @@ msgstr "Taille Minimum en GB (0 = Pas de Filtre):"
 msgctxt "#32211"
 msgid "Maximum Size in GB (10 = Filter OFF):"
 msgstr "Taille Maximum en GB (0 = Pas de Filtre):"
+
+#: settings.xml:13
+msgctxt "#32212"
+msgid "Search seasons, instead of episodes:"
+msgstr "Rechercher saisons, au lieu des épisodes:"

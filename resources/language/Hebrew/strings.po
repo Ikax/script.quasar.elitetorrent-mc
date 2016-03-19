@@ -137,3 +137,8 @@ msgstr "גודל קובץ מינימלי (0=סינון כבוי) (ב-GB):"
 msgctxt "#32211"
 msgid "Maximum Size in GB (10 = Filter OFF):"
 msgstr "גודל קובץ מקסימלי (10=סינון כבוי) (ב-GB):"
+
+#: settings.xml:13
+msgctxt "#32212"
+msgid "Search seasons, instead of episodes:"
+msgstr "עונות חיפוש, במקום פרקים:"

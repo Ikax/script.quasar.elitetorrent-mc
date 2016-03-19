@@ -6,6 +6,7 @@
         <!--<setting label="32151" type="labelenum" id="language" values="en|de|es|fr|it|pt" default="es"/>-->
         <setting label="32200" type="lsep"/>
         <setting label="32201" type="text" id="extra" default=""/>
+        <setting label="32212" type="bool" id="episodes" default="false"/>
         <setting label="32057" type="lsep"/>
         <setting label="32058" type="slider" id="time_noti" default="1500" range="0,125,2000" option="int"/>
     </category>

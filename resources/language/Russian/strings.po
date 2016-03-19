@@ -137,3 +137,8 @@ msgstr "Минимальный размер в Гб (0 = фильтр выклю
 msgctxt "#32211"
 msgid "Maximum Size in GB (10 = Filter OFF):"
 msgstr "Максимальный размер в Гб (10 = фильтр выключен):"
+
+#: settings.xml:13
+msgctxt "#32212"
+msgid "Search seasons, instead of episodes:"
+msgstr "Поиск сезонов, вместо эпизодов:"
