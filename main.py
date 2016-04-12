@@ -2,6 +2,7 @@
 __author__ = 'mancuniancol'
 
 import common
+import copy
 from bs4 import BeautifulSoup
 from quasar import provider
 
@@ -90,6 +91,17 @@ def search_movie(info):
 
 
 def search_episode(info):
+    trans_title = filters.remove_characters(common.translator(info['imdb_id'],"es"))
+    trans_info = copy.deepcopy(info)
+    trans_info['title'] = trans_title
+
+    results1 = search_episode_routine(info)
+    results2 = search_episode_routine(trans_info)
+    results = results1 + results2
+    
+    return results
+
+def search_episode_routine(info):
     settings.value["language"] = settings.value.get("language", "es")
     if info['absolute_number'] == 0:
         info["type"] = "show"
@@ -104,7 +116,6 @@ def search_episode(info):
         info["type"] = "anime"
         info["query"] = info['title'].encode('utf-8') + ' %02d' % info['absolute_number']  # define query anime
     return search_general(info)
-
 
 def search_season(info):
     provider.log.info(info)
