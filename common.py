@@ -294,6 +294,14 @@ class Filtering:
             res = True
         return res
 
+    def remove_characters(self, name):
+        from unicodedata import normalize
+        import types
+
+        uname = unicode(name, 'utf-8', 'ignore')
+        normalize_name = normalize('NFKD',uname)
+        return normalize_name.encode('ascii', 'ignore')
+    
     @staticmethod
     def normalize(name):
         from unicodedata import normalize
@@ -366,8 +374,16 @@ def translator(imdb_id, language, extra=True):
                      "&external_source=imdb_id" % (imdb_id, language)
     if browser1.open(url_themoviedb):
         movie = json.loads(browser1.content)
-        title = movie['movie_results'][0]['title'].encode('utf-8')
-        original_title = movie['movie_results'][0]['original_title'].encode('utf-8')
+        if(len(movie['movie_results']) > 0):
+            title = movie['movie_results'][0]['title'].encode('utf-8')
+            original_title = movie['movie_results'][0]['original_title'].encode('utf-8')
+        elif(len(movie['tv_results']) > 0):
+            title = movie['tv_results'][0]['name'].encode('utf-8')
+            original_title = movie['tv_results'][0]['original_name'].encode('utf-8')
+        else:
+            title = "";
+            original_title = ""
+
         if title == original_title and extra:
             title += ' ' + keywords[language]
     else:
