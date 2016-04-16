@@ -95,9 +95,9 @@ def search_episode(info):
     trans_info = copy.deepcopy(info)
     trans_info['title'] = trans_title
 
-    results1 = search_episode_routine(info)
-    results2 = search_episode_routine(trans_info)
-    results = results1 + results2
+    results = search_episode_routine(info)
+    if len(results) == 0:
+        results = search_episode_routine(trans_info)
     
     return results
 
